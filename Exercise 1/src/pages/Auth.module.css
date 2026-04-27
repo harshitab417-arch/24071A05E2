@@ -1,0 +1,90 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px 10px;
+  position: relative;
+}
+.bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 80% 20%, rgba(108,71,255,0.15) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 40% at 10% 90%, rgba(255,107,107,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  width: 100%;
+  max-width: 600px;
+  backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  z-index: 1;
+}
+.header { text-align: center; margin-bottom: 32px; }
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  margin-bottom: 24px;
+}
+.logoLink span { color: var(--primary); }
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.sub { color: var(--text-secondary); font-size: 0.95rem; }
+
+.form { margin-bottom: 0; }
+.row  { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.inputErr { border-color: var(--danger) !important; }
+.err { font-size: 0.78rem; color: var(--danger); margin-top: 2px; }
+
+.switch { text-align: center; font-size: 0.9rem; color: var(--text-secondary); }
+.switch a { color: var(--primary); font-weight: 600; }
+.switch a:hover { text-decoration: underline; }
+
+.demoTip {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 12px 16px;
+  background: rgba(108,71,255,0.08);
+  border: 1px solid rgba(108,71,255,0.2);
+  border-radius: 10px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: var(--text-primary);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 520px) {
+  .card { padding: 28px 20px; }
+  .row { grid-template-columns: 1fr; gap: 0; }
+}
